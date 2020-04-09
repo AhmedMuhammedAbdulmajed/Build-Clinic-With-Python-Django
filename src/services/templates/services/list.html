@@ -1,6 +1,5 @@
+<h1>List</h1>
 
-{% for services in services_list %}
-<p>
-    <h2>{{services}}    </h2>
-</p>
+{% for property in property_list %}
+  <h1><a href="{% url 'property:property_detail' property.id %}">{{property}}</a></h1>
 {% endfor %}

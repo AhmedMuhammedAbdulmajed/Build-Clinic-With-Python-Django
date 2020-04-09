@@ -9,5 +9,10 @@ def services_list(requset):
     }
     return render(requset,template,context)
 
-def services_detail(requset):
-    pass
+def services_detail(requset,id):
+    services_detail = services.objects.get(id=id)
+    template='services/detial.html'
+    context= {
+        'services_detail' : services_detail
+    }
+    return render(requset,template,context)
