@@ -1,5 +1,57 @@
-<h1>List</h1>
+{% extends 'base.html' %}
+{% block body %}
 
-{% for property in property_list %}
-  <h1><a href="{% url 'property:property_detail' property.id %}">{{property}}</a></h1>
-{% endfor %}
+	<body>
+		
+	<div class="qbootstrap-loader"></div>
+	
+	<div id="page">
+
+	
+	<aside id="qbootstrap-hero">
+		<div class="flexslider">
+			<ul class="slides">
+			   {% load static %}
+			   <img src="{% static 'images/img_bg_2.jpg'  %}">
+		   		<div class="overlay"></div>
+		   		<div class="container">
+		   			<div class="row">
+			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
+			   				<div class="slider-text-inner">
+			   					<h1>Our <strong>Services</strong></h1>
+			   				</div>
+			   			</div>
+			   		</div>
+		   		</div>
+		   	</li>
+		  	</ul>
+	  	</div>
+	</aside>
+
+	<div id="qbootstrap-services">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-6 col-md-offset-3 text-center qbootstrap-heading">
+					<h2>Our Services</h2>
+					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+				</div>
+			</div>
+			<div class="row">
+				{% for services in services %}
+				<div class="col-md-4 animate-box">
+					<div class="services">
+						<span class="icon">
+							<i class="icon-flow-merge"></i>
+						</span>
+						<div class="desc">
+							<h3><a href="#">{{services}}</a></h3>
+							<p>{{services.detial}}</p>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+				
+			</div>
+		</div>
+	</div>
+{% endblock body %}
